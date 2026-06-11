@@ -1,60 +1,59 @@
-import { forwardRef } from 'react'
+import { useInView } from '../hooks/useInView'
+import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
 
-const SKILLS = [
-  'JavaScript', 'Java', 'HTML / CSS', 'JSON', 'Git',
-  'React', 'Node.js', 'REST APIs', 'OOP', 'Data Structures', 'Algorithms',
-]
+export default function About() {
+  const [ref, inView] = useInView()
 
-const DocAbout = forwardRef(function DocAbout(_, ref) {
   return (
-    <div ref={ref} className="doc" style={{ display: 'flex' }}>
-      <div className="doc-inner">
-        <div className="doc-header">
-          <span className="doc-label">About me</span>
-          <span className="doc-pagenum">pg. 01</span>
-        </div>
+    <section className="section section-alt" id="about" ref={ref}>
+      <FlowerGroupLeft  visible={inView} />
 
-        <div className="eyebrow">CS Student · Open to internships</div>
-        <h1>Hi, I'm<br /><em>Evie.</em></h1>
-        <p style={{ maxWidth: 480, marginTop: 12 }}>
-          Computer Science student passionate about full-stack development, clean
-          code, and building software that people actually enjoy using. I turn
-          ideas into working things.
-        </p>
+      <div className="section-inner">
+        <p className="section-tag">01 — About me</p>
+        <h2 className="section-heading">A little about me</h2>
 
-        <hr className="divider" />
-        <h2 className="section-label">Skills</h2>
-        <div className="skills-wrap">
-          {SKILLS.map(s => <span key={s} className="skill-tag">{s}</span>)}
+        <div className="about-grid">
+          <div className="about-photo">
+            {/* Replace with your photo: <img src="/your-photo.jpg" alt="Evie" style={{width:'100%',height:'100%',objectFit:'cover'}} /> */}
+            Your photo here
+          </div>
+
+          <div className="about-text">
+            <p className="section-body">
+              I'm a Computer Science student passionate about full-stack
+              development, clean code, and building software that people
+              actually enjoy using.
+            </p>
+            <p className="section-body">
+              When I'm not coding, you can find me exploring new design trends,
+              working on personal projects, or levelling up my skills. I love
+              turning complex problems into simple, elegant solutions.
+            </p>
+            <span className="about-handnote">always learning, always building ✦</span>
+          </div>
         </div>
 
         <div className="stats-row">
-          <div className="stat">
-            <div className="stat-num">12+</div>
-            <div className="stat-lbl">Projects</div>
+          <div className="stat-cell">
+            <div className="stat-number">12+</div>
+            <div className="stat-label">Projects</div>
           </div>
-          <div className="stat">
-            <div className="stat-num">4</div>
-            <div className="stat-lbl">Languages</div>
+          <div className="stat-cell">
+            <div className="stat-number">4</div>
+            <div className="stat-label">Languages</div>
           </div>
-          <div className="stat">
-            <div className="stat-num">3rd</div>
-            <div className="stat-lbl">Year</div>
+          <div className="stat-cell">
+            <div className="stat-number">3rd</div>
+            <div className="stat-label">Year</div>
           </div>
-          <div className="stat">
-            <div className="stat-num">∞</div>
-            <div className="stat-lbl">Curiosity</div>
+          <div className="stat-cell">
+            <div className="stat-number">∞</div>
+            <div className="stat-label">Curiosity</div>
           </div>
         </div>
+      </div>
 
-        <span className="handnote">always learning, always building ✦</span>
-      </div>
-      <div className="doc-footer">
-        <span className="doc-footer-name">evie — portfolio</span>
-        <span className="doc-footer-stamp">2026</span>
-      </div>
-    </div>
+      <FlowerGroupRight visible={inView} />
+    </section>
   )
-})
-
-export default DocAbout
+}

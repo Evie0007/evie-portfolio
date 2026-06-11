@@ -1,56 +1,40 @@
-import { forwardRef } from 'react'
+import { useInView } from '../hooks/useInView'
+import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
 
-const FIELDS = [
-  { label: 'Email',    value: 'you@email.com',                    href: 'mailto:you@email.com' },
-  { label: 'GitHub',   value: 'github.com/yourusername',          href: 'https://github.com/yourusername' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/yourprofile',      href: 'https://linkedin.com/in/yourprofile' },
-  { label: 'Resume',   value: 'Download PDF ↓',                   href: '#' },
+const LINKS = [
+  { label: 'Email',    value: 'you@email.com',               href: 'mailto:you@email.com' },
+  { label: 'GitHub',   value: 'github.com/Evie0007',         href: 'https://github.com/Evie0007' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/yourprofile', href: 'https://linkedin.com/in/yourprofile' },
+  { label: 'Resume',   value: 'Download PDF ↓',              href: '#' },
 ]
 
-const DocContact = forwardRef(function DocContact(_, ref) {
+export default function Contact() {
+  const [ref, inView] = useInView()
+
   return (
-    <div ref={ref} className="doc" style={{ display: 'none' }}>
-      <div className="doc-inner">
-        <div className="doc-header">
-          <span className="doc-label">Contact</span>
-          <span className="doc-pagenum">pg. 03</span>
-        </div>
+    <section className="section" id="contact" ref={ref}>
+      <FlowerGroupLeft  visible={inView} />
 
-        <h2 className="section-label">Get in touch</h2>
-        <h1>Let's work<br /><em>together.</em></h1>
+      <div className="section-inner">
+        <p className="section-tag">04 — Contact</p>
+        <h2 className="section-heading">Let's work <em style={{ fontStyle: 'italic', color: '#B86478' }}>together.</em></h2>
+        <p className="contact-intro">
+          I'm currently looking for internship opportunities. My inbox is always
+          open — whether you have a question, a project idea, or just want to
+          say hello.
+        </p>
 
-        <div style={{ marginTop: 26 }}>
-          {FIELDS.map(f => (
-            <div key={f.label} className="contact-field">
-              <span className="field-label">{f.label}</span>
-              <a href={f.href} className="field-val">{f.value}</a>
-            </div>
+        <div className="contact-links">
+          {LINKS.map(l => (
+            <a key={l.label} href={l.href} className="contact-link">
+              <span className="contact-link-label">{l.label}</span>
+              <span className="contact-link-value">{l.value}</span>
+            </a>
           ))}
         </div>
-
-        <div className="contact-note">
-          <p>"I'm currently looking for internship opportunities. My inbox is always
-          open — whether you have a question, a project idea, or just want to say
-          hello."</p>
-        </div>
-
-        <div className="meta-row">
-          <div className="meta-cell">
-            <div className="meta-lbl">Response time</div>
-            <div className="meta-val">within 24 hrs</div>
-          </div>
-          <div className="meta-cell">
-            <div className="meta-lbl">Timezone</div>
-            <div className="meta-val">Your timezone</div>
-          </div>
-        </div>
       </div>
-      <div className="doc-footer">
-        <span className="doc-footer-name">evie — portfolio</span>
-        <span className="doc-footer-stamp">2026</span>
-      </div>
-    </div>
+
+      <FlowerGroupRight visible={inView} />
+    </section>
   )
-})
-
-export default DocContact
+}
