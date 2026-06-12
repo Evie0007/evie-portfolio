@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <a href="#hero" className="navbar-logo">Evie.</a>
+      <a href="#hero" className="navbar-logo">Evie Ho</a>
       <ul className="navbar-links">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>

@@ -9,7 +9,6 @@ export default function About() {
       <FlowerGroupLeft  visible={inView} />
 
       <div className="section-inner">
-        <p className="section-tag">01 — About me</p>
         <h2 className="section-heading">A little about me</h2>
 
         <div className="about-grid">
@@ -25,32 +24,15 @@ export default function About() {
               actually enjoy using.
             </p>
             <p className="section-body">
-              When I'm not coding, you can find me exploring new design trends,
-              working on personal projects, or levelling up my skills. I love
-              turning complex problems into simple, elegant solutions.
+              When I'm not coding, you can find me exploring new places for good food and boba,
+              working on personal projects, or enjoying my time with my loved ones.
+              I'm always excited to learn something new and apply it to my work.
             </p>
             <span className="about-handnote">always learning, always building ✦</span>
           </div>
         </div>
 
-        <div className="stats-row">
-          <div className="stat-cell">
-            <div className="stat-number">12+</div>
-            <div className="stat-label">Projects</div>
-          </div>
-          <div className="stat-cell">
-            <div className="stat-number">4</div>
-            <div className="stat-label">Languages</div>
-          </div>
-          <div className="stat-cell">
-            <div className="stat-number">3rd</div>
-            <div className="stat-label">Year</div>
-          </div>
-          <div className="stat-cell">
-            <div className="stat-number">∞</div>
-            <div className="stat-label">Curiosity</div>
-          </div>
-        </div>
+    
       </div>
 
       <FlowerGroupRight visible={inView} />

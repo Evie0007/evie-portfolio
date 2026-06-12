@@ -15,18 +15,13 @@ export default function Hero() {
       <FlowerGroupLeft  visible={visible} />
 
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <p className="hero-eyebrow">CS Student &amp; Developer</p>
         <h1 className="hero-title">
           Hi, I'm <em>Evie.</em>
         </h1>
         <p className="hero-sub">
-          I build clean, modern, and user-friendly web experiences — turning
-          ideas into things that actually work.
+          I'm a CS major student at San Jose State University.
+          Beside coding, I enjoy designing and exploring new technologies.
         </p>
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-dark">View My Work</a>
-          <a href="#contact"  className="btn btn-outline">Get In Touch</a>
-        </div>
       </div>
 
       <div className="hero-scroll" aria-hidden="true">
