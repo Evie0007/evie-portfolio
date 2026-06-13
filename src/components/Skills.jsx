@@ -1,3 +1,5 @@
+import { useInView } from '../hooks/useInView'
+
 const SKILLS = [
   'JavaScript', 'Java', 'HTML', 'CSS', 'Python',
   'React', 'Node.js', 'REST APIs', 'Git', 'GitHub',
@@ -5,8 +7,14 @@ const SKILLS = [
 ]
 
 export default function Skills() {
+  const [ref, inView] = useInView({ threshold: 0.08 })
+
   return (
-    <section className="section" id="skills">
+    <section
+      ref={ref}
+      className={`section section-reveal${inView ? ' reveal-visible' : ''}`}
+      id="skills"
+    >
       <div className="section-inner">
         <h2 className="section-heading">My Skills</h2>
         <p className="section-body">

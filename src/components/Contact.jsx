@@ -1,3 +1,4 @@
+import { useInView } from '../hooks/useInView'
 
 const LINKS = [
   {
@@ -44,9 +45,14 @@ const LINKS = [
 ]
 
 export default function Contact() {
-  return (
-    <section className="section" id="contact">
+  const [ref, inView] = useInView({ threshold: 0.08 })
 
+  return (
+    <section
+      ref={ref}
+      className={`section section-reveal${inView ? ' reveal-visible' : ''}`}
+      id="contact"
+    >
       <div className="section-inner contact-center">
         <h2 className="section-heading" style={{ justifyContent: 'center' }}>
           Get in touch
@@ -72,7 +78,6 @@ export default function Contact() {
           ))}
         </div>
       </div>
-
     </section>
   )
 }

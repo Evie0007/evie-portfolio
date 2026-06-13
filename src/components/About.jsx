@@ -1,6 +1,14 @@
+import { useInView } from '../hooks/useInView'
+
 export default function About() {
+  const [ref, inView] = useInView({ threshold: 0.08 })
+
   return (
-    <section className="section section-alt" id="about">
+    <section
+      ref={ref}
+      className={`section section-alt section-reveal${inView ? ' reveal-visible' : ''}`}
+      id="about"
+    >
       <div className="section-inner">
         <h2 className="section-heading">A little about me</h2>
 

@@ -86,7 +86,7 @@ body {
   margin: 0 auto;
   padding: 100px 60px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media (max-width: 600px) {
@@ -122,8 +122,14 @@ body {
   text-align: center;
   position: relative;
   overflow: visible;
-  background: var(--cream);
+  background: rgba(255, 252, 247, 0.90);
   padding: 80px 60px;
+  animation: heroFadeIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .hero-title {
@@ -439,7 +445,7 @@ body {
 .floating-flower {
   position: fixed;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
   opacity: 0;
   /* wrapper handles X slide-in only — Y bob lives on the inner div */
   transition: opacity 0.8s ease, transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
@@ -455,15 +461,15 @@ body {
   transform: translateX(120%) translateY(-50%);
 }
 
-/* Slide in: show ~50% of the flower peeking from the edge */
+/* Slide in: ~70% of the flower visible, peeking from the edge */
 .floating-flower.fl-left.fl-visible {
   opacity: 1;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-28%) translateY(-50%);
 }
 
 .floating-flower.fl-right.fl-visible {
   opacity: 1;
-  transform: translateX(50%) translateY(-50%);
+  transform: translateX(28%) translateY(-50%);
 }
 
 /* Inner div bobs up and down independently of the slide-in */
@@ -481,4 +487,17 @@ body {
 }
 
 /* ── Section background alternation ── */
-.section-alt { background: var(--cream); }
+/* Semi-transparent so fixed flowers show through softly */
+.section-alt { background: rgba(255, 252, 247, 0.90); }
+
+/* ── Section scroll-reveal ── */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.85s ease, transform 1.0s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.section-reveal.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

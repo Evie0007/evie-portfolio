@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useInView } from '../hooks/useInView'
 
 const DEV_PROJECTS = [
   {
@@ -49,12 +50,17 @@ const MARKETING_PROJECTS = [
 ]
 
 export default function Projects() {
+  const [ref, inView] = useInView({ threshold: 0.06 })
   const [tab, setTab] = useState('dev')
 
   const projects = tab === 'dev' ? DEV_PROJECTS : MARKETING_PROJECTS
 
   return (
-    <section className="section section-alt" id="projects">
+    <section
+      ref={ref}
+      className={`section section-alt section-reveal${inView ? ' reveal-visible' : ''}`}
+      id="projects"
+    >
 
       <div className="section-inner">
         <h2 className="section-heading">My Work</h2>
