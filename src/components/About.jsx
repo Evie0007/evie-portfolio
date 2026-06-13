@@ -1,13 +1,6 @@
-import { useInView } from '../hooks/useInView'
-import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
-
 export default function About() {
-  const [ref, inView] = useInView()
-
   return (
-    <section className="section section-alt" id="about" ref={ref}>
-      <FlowerGroupLeft  visible={inView} />
-
+    <section className="section section-alt" id="about">
       <div className="section-inner">
         <h2 className="section-heading">A little about me</h2>
 
@@ -24,18 +17,15 @@ export default function About() {
               actually enjoy using.
             </p>
             <p className="section-body">
-              When I'm not coding, you can find me exploring new places for good food and boba,
-              working on personal projects, or enjoying my time with my loved ones.
-              I'm always excited to learn something new and apply it to my work.
+              When I'm not coding, you can find me exploring new places for
+              good food and boba, working on personal projects, or enjoying
+              time with my loved ones. I'm always excited to learn something
+              new and apply it to my work.
             </p>
             <span className="about-handnote">always learning, always building ✦</span>
           </div>
         </div>
-
-    
       </div>
-
-      <FlowerGroupRight visible={inView} />
     </section>
   )
 }

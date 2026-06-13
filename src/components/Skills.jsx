@@ -1,6 +1,3 @@
-import { useInView } from '../hooks/useInView'
-import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
-
 const SKILLS = [
   'JavaScript', 'Java', 'HTML', 'CSS', 'Python',
   'React', 'Node.js', 'REST APIs', 'Git', 'GitHub',
@@ -8,12 +5,8 @@ const SKILLS = [
 ]
 
 export default function Skills() {
-  const [ref, inView] = useInView()
-
   return (
-    <section className="section" id="skills" ref={ref}>
-      <FlowerGroupLeft  visible={inView} />
-
+    <section className="section" id="skills">
       <div className="section-inner">
         <h2 className="section-heading">My Skills</h2>
         <p className="section-body">
@@ -27,8 +20,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-
-      <FlowerGroupRight visible={inView} />
     </section>
   )
 }

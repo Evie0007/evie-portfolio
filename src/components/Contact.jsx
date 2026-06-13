@@ -1,5 +1,3 @@
-import { useInView } from '../hooks/useInView'
-import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
 
 const LINKS = [
   {
@@ -46,11 +44,8 @@ const LINKS = [
 ]
 
 export default function Contact() {
-  const [ref, inView] = useInView()
-
   return (
-    <section className="section" id="contact" ref={ref}>
-      <FlowerGroupLeft visible={inView} />
+    <section className="section" id="contact">
 
       <div className="section-inner contact-center">
         <h2 className="section-heading" style={{ justifyContent: 'center' }}>
@@ -78,7 +73,6 @@ export default function Contact() {
         </div>
       </div>
 
-      <FlowerGroupRight visible={inView} />
     </section>
   )
 }

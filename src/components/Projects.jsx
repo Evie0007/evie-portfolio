@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { useInView } from '../hooks/useInView'
-import { FlowerGroupLeft, FlowerGroupRight } from './Flowers'
 
 const DEV_PROJECTS = [
   {
@@ -51,14 +49,12 @@ const MARKETING_PROJECTS = [
 ]
 
 export default function Projects() {
-  const [ref, inView] = useInView()
   const [tab, setTab] = useState('dev')
 
   const projects = tab === 'dev' ? DEV_PROJECTS : MARKETING_PROJECTS
 
   return (
-    <section className="section section-alt" id="projects" ref={ref}>
-      <FlowerGroupLeft visible={inView} />
+    <section className="section section-alt" id="projects">
 
       <div className="section-inner">
         <h2 className="section-heading">My Work</h2>
@@ -100,7 +96,6 @@ export default function Projects() {
         </div>
       </div>
 
-      <FlowerGroupRight visible={inView} />
     </section>
   )
 }
