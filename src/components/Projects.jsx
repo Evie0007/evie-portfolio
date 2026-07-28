@@ -3,48 +3,55 @@ import { useInView } from '../hooks/useInView'
 
 const DEV_PROJECTS = [
   {
-    tag:  'Featured · Full-stack',
-    name: 'Project Name Here',
-    desc: 'A short description of what this project does and what problem it solves. Outcome-focused and clear.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'REST API'],
+    tag:  'SjHacks 2026 Winner · Full-Stack',
+    name: 'Playtest Pilot',
+    desc: 'React dashboard for a Unity game playtesting tool with playtest setup, issue tracking, test results, and hardware settings. Integrated with backend services and telemetry data to surface bug severity and performance summaries. Built with a 4-person team in under 24 hours.',
+    tech: ['React', 'Vite', 'Tailwind CSS', 'Node.js'],
+    href: '#', // add your GitHub link here
+  },
+  {
+    tag:  'Full-Stack · Java · Team Lead',
+    name: "Student's Knowledge Base",
+    desc: 'MVC-based faculty information portal with robust CRUD functionality, automated data validation, and SQLite integration for reliable student academic record management. Led a 4-person team through the full SDLC — delivered full marks.',
+    tech: ['Java', 'JavaFX', 'SQLite', 'OOP'],
     href: '#',
   },
   {
-    tag:  'Algorithm · Java',
-    name: 'Project Two',
-    desc: 'Brief description — what you built, what it demonstrates, and what you learned from it.',
-    tech: ['Java', 'Data Structures', 'Algorithms'],
-    href: '#',
+    tag:  'Game Dev · Java',
+    name: 'Flappy Cat Game',
+    desc: 'Flappy Bird-style game built with OOP principles, managing player, obstacles, scoring, and collision detection as independent objects. Iterated on gameplay logic and tested edge cases to improve responsiveness and stability.',
+    tech: ['Java', 'OOP'],
+    href: '#', // add your GitHub link here
   },
   {
-    tag:  'Frontend · UI',
-    name: 'Project Three',
-    desc: 'Brief description — what you built, what it demonstrates, and what you learned from it.',
-    tech: ['HTML', 'CSS', 'JavaScript'],
+    tag:  'Frontend · React',
+    name: 'Claude Monet Website',
+    desc: 'Multi-page website showcasing Claude Monet\'s artwork with structured navigation and an engaging visual browsing experience. Designed responsive layouts using CSS Grid and Flexbox for a consistent experience across screen sizes.',
+    tech: ['React', 'HTML/CSS', 'Node.js'],
     href: '#',
   },
 ]
 
 const MARKETING_PROJECTS = [
   {
-    tag:  'Social Media · Campaign',
-    name: 'Campaign Name Here',
-    desc: 'Brief description of the campaign goal, strategy used, and measurable outcome achieved.',
-    tech: ['Instagram', 'Canva', 'Meta Ads'],
+    tag:  'UX/UI Design · Jan 2026 – Present',
+    name: 'ESA Compliance Navigator',
+    desc: 'Designed 15+ high-fidelity web pages and 2 interactive prototypes for web and mobile. Independently created the mobile UX/UI from concept to prototype within a 2-week sprint for the project\'s main conference showcase, accelerating the development timeline by an estimated 2 weeks.',
+    tech: ['Figma', 'UX Research', 'Prototyping', 'Mobile Design'],
+    href: '#', // add your demo link here
+  },
+  {
+    tag:  'Social Media · Branding · Oct 2025 – Present',
+    name: 'RCC SJSU — Brand & Campaigns',
+    desc: 'Digital Marketing & Graphic Design Ambassador for the Responsible Computing Club at SJSU. Developed campaign strategies, designed social media assets, and refreshed brand visuals and merchandise to maintain a consistent digital presence.',
+    tech: ['Social Media', 'Graphic Design', 'Brand Identity', 'Campaign Strategy'],
     href: '#',
   },
   {
-    tag:  'Content · Branding',
-    name: 'Marketing Project Two',
-    desc: 'Brief description — what you created, for what brand or audience, and what results it achieved.',
-    tech: ['Canva', 'Copywriting', 'Analytics'],
-    href: '#',
-  },
-  {
-    tag:  'SEO · Email',
-    name: 'Marketing Project Three',
-    desc: 'Brief description — the strategy, tools used, and measurable impact on engagement or reach.',
-    tech: ['SEO', 'Mailchimp', 'Google Analytics'],
+    tag:  'Event Marketing · Apr – Aug 2025',
+    name: 'Vietnam Tech Summit 2025',
+    desc: 'Created digital marketing assets and slide templates for a 500+ attendee tech conference. Assisted onsite operations over 2 days, ensuring smooth logistics and guest experience for speakers and participants.',
+    tech: ['Digital Marketing', 'Design', 'Content Creation', 'Event Operations'],
     href: '#',
   },
 ]
